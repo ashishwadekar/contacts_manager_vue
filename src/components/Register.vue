@@ -49,7 +49,7 @@ export default {
             if(this.password === this.confirm_password) {
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then( user => {
                     alert('Account created for ' + this.email)
-                    this.$router.push('/')
+                    this.$router.go({ path: this.$router.path})
                 },
                 err => {
                     alert(err.message)
